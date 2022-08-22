@@ -1,11 +1,12 @@
 // @desc    Add two numbers
 //@route    GET /calculate/add/x/y
 const add = (req, res) => {
-  const { x, y } = req.params
+  const { x, y } = req.params;
   const solution = Number(x) + Number(y);
   res
+    .header("Access-Control-Allow-Origin", "*")
     .status(200)
-    .json({ message: "add", x: req.params.x, y: req.params.y, solution });
+    .json({ operation: "add", x: req.params.x, y: req.params.y, solution });
 };
 
 // @desc    Subtract two numbers
@@ -14,8 +15,14 @@ const subtract = (req, res) => {
   const { x, y } = req.params;
   const solution = Number(x) - Number(y);
   res
+    .header("Access-Control-Allow-Origin", "*")
     .status(200)
-    .json({ message: "subtract", x: req.params.x, y: req.params.y, solution });
+    .json({
+      operation: "subtract",
+      x: req.params.x,
+      y: req.params.y,
+      solution,
+    });
 };
 
 // @desc    Multiply two numbers
@@ -24,8 +31,14 @@ const multiply = (req, res) => {
   const { x, y } = req.params;
   const solution = Number(x) * Number(y);
   res
+    .header("Access-Control-Allow-Origin", "*")
     .status(200)
-    .json({ message: "multiply", x: req.params.x, y: req.params.y, solution });
+    .json({
+      operation: "multiply",
+      x: req.params.x,
+      y: req.params.y,
+      solution,
+    });
 };
 
 // @desc    Divide two numbers
@@ -34,8 +47,9 @@ const divide = (req, res) => {
   const { x, y } = req.params;
   const solution = Number(x) / Number(y);
   res
+    .header("Access-Control-Allow-Origin", "*")
     .status(200)
-    .json({ message: "divide", x: req.params.x, y: req.params.y, solution });
+    .json({ operation: "divide", x: req.params.x, y: req.params.y, solution });
 };
 
 module.exports = {
