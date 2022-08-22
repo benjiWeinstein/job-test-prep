@@ -2,7 +2,7 @@
 
 ## To run:
 
-1) Clone the repository
+1) Clone the repository and make sure node is installed on your machine
 2) Run `npm i` in the main directory (job-test-prep)
 3) Run `cd frontend && npm i`
 4) Finally, navigate back to the main directory (job-test-prep) and run `npm run dev`
